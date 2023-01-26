@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll",
+    "prepare": "husky install"
   },
   "author": "Covadonga Millan",
   "license": "ISC",
@@ -18,5 +19,14 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
   }
 }
